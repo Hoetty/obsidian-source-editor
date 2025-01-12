@@ -1,0 +1,37 @@
+/* Monospace font and a bit smaller font size */
+[data-mode="source"] > .view-content * {
+    font-family: var(--font-monospace);
+    font-size: calc(var(--font-text-size) * 0.85)!important;
+}
+
+/* Make headings stand out, as they have the same font size as text now */
+[data-mode="source"] .HyperMD-header, [data-mode="source"] > .view-content div.inline-title {
+    color: var(--color-orange);
+}
+
+/* Math is really bright without this */
+[data-mode="source"] .cm-math {
+    opacity: 75%;
+}
+
+/* Smaller headings have more lineheight. This makes them all equally high */
+[data-mode="source"] .cm-header {
+    line-height: var(--line-height-normal);
+}
+
+/* For h3s, the collapse icon shifts down ever so slightly. This fixes that */
+[data-mode="source"] .HyperMD-header-3 {
+    line-height: var(--line-height-normal);
+}
+
+/* 
+Code blocks are really tightly spaced to the context next to them 
+this gives them a bit more height. Padding/Margin would have been nice,
+but it messes with obsidians mouse pointer click calculation, making it hard to select text
+*/
+.markdown-source-view.mod-cm6 .cm-content > .HyperMD-codeblock-begin {
+    line-height: 2.5;
+}
+.markdown-source-view.mod-cm6 .cm-content > .HyperMD-codeblock-end {
+    line-height: 2.5;
+}
